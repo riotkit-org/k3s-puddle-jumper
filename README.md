@@ -1,7 +1,7 @@
 k3s-puddle-jumper
 =================
 
-A Space Harbor deployment template pre-configured for a minimal K3s cluster deployment.
+A Space Harbor deployment template repository, pre-configured for a minimal K3s cluster deployment.
 
 Requirements
 ------------
@@ -10,6 +10,20 @@ Requirements
 - Virtualization: KVM/VMWare/Xen
 - Memory: 4GB+ (1GB reserved for infrastructure - k3s, ingress controller, cert-manager, etc.)
 - CPU: 1-2vCPU (recommended at least 2 vCPU)
+
+Stack
+-----
+
+- **Container runtime:** containerd + crun + gVisor
+- **Networking:** Flannel using `host-gw`
+- **VPN:** WireGuard for administrative access (API server is accessible via VPN)
+- **Network Policies:** Kube-Router
+- **DNS:** CoreDNS
+- **Metrics:** Metrics Server
+- **Deployment:** ArgoCD
+- **Ingress:** Ingress NGINX + Cert Manager
+- **GitOps Secrets:** Sealed Secrets
+- **Firewall:** UFW
 
 Getting started
 ---------------
