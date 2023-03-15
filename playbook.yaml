@@ -1,0 +1,4 @@
+- hosts: cluster
+  gather_facts: yes
+  roles:
+      - role: ansible-k3s-space-harbor

@@ -1,0 +1,12 @@
+# Put your secrets there and encrypt file with ansible-vault
+ansible_ssh_host: 1.2.3.4
+ansible_ssh_user: ubuntu
+ansible_ssh_password: oh-my-pass
+
+cluster_git_repository:
+    argocd_read_only_user: "__token__"
+    argocd_read_only_password: "xxx"
+    deployment_time_user: "__token__"
+    deployment_time_password: "yyy"
+
+admin1_pubkey: "-----"

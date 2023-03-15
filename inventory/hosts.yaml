@@ -1,0 +1,18 @@
+cluster:
+    hosts:
+        primary-01:
+            node_type: primary
+
+            # Bind on the admin VPN address
+            cluster_api_bind_address: 0.0.0.0
+            node_internal_ip: 10.231.0.1
+
+            admin_vpn_enabled: true
+            admin_vpn_ip: 10.231.0.1
+            admin_vpn_peers:
+                - ip: 10.231.0.2
+                  public_key: "{{ admin1_pubkey }}"
+
+            cluster_git_repository:
+                remote: "https://example.org/my-org/my-repo.git"
+                branch: "main"

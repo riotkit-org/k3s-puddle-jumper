@@ -1,0 +1,17 @@
+
+# Canal is not lightweight
+canal_enabled: false
+cilium_enabled: false
+infracheck_enabled: false
+mail_enabled: false
+
+vpn_enabled: false
+flannel_iface: eth0
+vpn_flannel_backend: vxlan
+
+# -- Single node setup cannot have taint on primary
+noschedule_on_primary: false
+
+# -- Protect against VM Out-of-memory and Out-of-space
+kubelet_args:
+    - "--eviction-hard=memory.available<350Mi,nodefs.available<5Gi"
